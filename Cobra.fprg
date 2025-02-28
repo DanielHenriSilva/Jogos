@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Cobra"/>
+        <attribute name="authors" value="danir"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-28 08:49:40 "/>
+        <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjg7IjA4OjQ5OjQwICI7MTY7MjMxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="escolha" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escolha Um Jogo (1 a 3)&quot;" newline="True"/>
+            <input variable="escolha"/>
+            <if expression="escolha = 1">
+                <then>
+                    <call expression="Cobra"/>
+                </then>
+                <else>
+                    <if expression="escolha = 2">
+                        <then>
+                            <call expression="PerguntasERespostas"/>
+                        </then>
+                        <else>
+                            <call expression="GosmasWar"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Obrigado Por Jogar!&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="Cobra" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nomes" type="String" array="True" size="7"/>
+            <declare name="jogador1, jogador2" type="String" array="False" size=""/>
+            <declare name="continuar" type="Boolean" array="False" size=""/>
+            <declare name="posicaoBotao, posicaoCobra, escolha, turno, botao, cobra, caixaEscolhida" type="Integer" array="False" size=""/>
+            <assign variable="nomes[0]" expression="&quot;Alice&quot;"/>
+            <assign variable="nomes[1]" expression="&quot;Bruno&quot;"/>
+            <assign variable="nomes[2]" expression="&quot;Carlos&quot;"/>
+            <assign variable="nomes[3]" expression="&quot;Bob&quot;"/>
+            <assign variable="nomes[4]" expression="&quot;Diana&quot;"/>
+            <assign variable="nomes[5]" expression="&quot;Eva&quot;"/>
+            <assign variable="nomes[6]" expression="&quot;Gabriel&quot;"/>
+            <output expression="&quot;Bem-Vindo ao Desafio da Tumba!&quot;" newline="True"/>
+            <output expression="&quot;Escolha um nome para o jogador 1 (0-6):&quot;" newline="True"/>
+            <output expression="&quot;0-Alice, 1-Bruno, 2-Carlos, 3-Bob, 4-Diana, 5-Eva, 6-Gabriel&quot;" newline="True"/>
+            <input variable="escolha"/>
+            <assign variable="jogador1" expression="nomes[escolha]"/>
+            <output expression="&quot;Escolha um nome para o jogador 2 (0-6):&quot;" newline="True"/>
+            <output expression="&quot;0-Alice, 1-Bruno, 2-Carlos, 3-Bob, 4-Diana, 5-Eva, 6-Gabriel&quot;" newline="True"/>
+            <input variable="escolha"/>
+            <assign variable="jogador2" expression="nomes[escolha]"/>
+            <assign variable="turno" expression="Random(2)"/>
+            <if expression="turno = 0">
+                <then>
+                    <output expression="&quot;O Primeiro a Jogar &#201;: &quot; &amp;jogador1" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;O Primeiro a Jogar &#201;: &quot; &amp;jogador2" newline="True"/>
+                </else>
+            </if>
+            <assign variable="continuar" expression="true"/>
+            <while expression="continuar=true">
+                <assign variable="posicaoBotao" expression="random(5)"/>
+                <assign variable="posicaoCobra" expression="random(5)"/>
+                <while expression="posicaoBotao=posicaoCobra">
+                    <assign variable="posicaoCobra" expression="random(5)"/>
+                </while>
+                <output expression="&quot;Escolha uma caixa (0 a 4):&quot;" newline="True"/>
+                <input variable="escolha"/>
+                <if expression="escolha = posicaoBotao">
+                    <then>
+                        <output expression="&quot;Parab&#233;ns! Voc&#234; encontrou o bot&#227;o e escapou!&quot;" newline="True"/>
+                        <assign variable="continuar" expression="false"/>
+                    </then>
+                    <else>
+                        <if expression="escolha = posicaoCobra">
+                            <then>
+                                <output expression="&quot;Voc&#234; encontrou a cobra! Game over.&quot;" newline="True"/>
+                                <assign variable="continuar" expression="false"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;A caixa est&#225; vazia. Pr&#243;ximo turno.&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Deseja jogar novamente? (S/N)&quot;" newline="True"/>
+            <input variable="continuar"/>
+            <if expression="continuar = sim">
+                <then>
+                    <assign variable="continuar" expression="true"/>
+                    <call expression="Cobra"/>
+                </then>
+                <else>
+                    <assign variable="continuar" expression="false"/>
+                    <output expression="&quot;Obrigado por jogar!&quot;" newline="True"/>
+                    <call expression="Menu"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="GosmasWar" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+    <function name="Menu" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="escolha" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escolha Um Jogo (1 a 3)&quot;" newline="True"/>
+            <input variable="escolha"/>
+            <if expression="escolha = 1">
+                <then>
+                    <call expression="Cobra"/>
+                </then>
+                <else>
+                    <if expression="escolha = 2">
+                        <then>
+                            <call expression="PerguntasERespostas"/>
+                        </then>
+                        <else>
+                            <call expression="GosmasWar"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Obrigado Por Jogar!&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="PerguntasERespostas" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
