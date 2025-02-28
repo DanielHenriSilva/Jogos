@@ -4,9 +4,9 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-02-28 08:49:40 "/>
+        <attribute name="saved" value="2025-02-28 09:37:30 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjg7IjA4OjQ5OjQwICI7MTY7MjMxMQ=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjg7IjA5OjM3OjMwICI7MTc7MjMwOQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -93,7 +93,7 @@
             </while>
             <output expression="&quot;Deseja jogar novamente? (S/N)&quot;" newline="True"/>
             <input variable="continuar"/>
-            <if expression="continuar = sim">
+            <if expression="continuar = true">
                 <then>
                     <assign variable="continuar" expression="true"/>
                     <call expression="Cobra"/>
