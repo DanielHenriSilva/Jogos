@@ -4,10 +4,10 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-02-28 09:00:23 "/>
+        <attribute name="saved" value="2025-02-28 10:06:00 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
         <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjg7IjA5OjAwOjIzICI7MTg7MjMwMg=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjg7IjEwOjA2OjAwICI7MjE7MjI4OQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -109,7 +109,82 @@
     </function>
     <function name="GosmasWar" type="None" variable="">
         <parameters/>
-        <body/>
+        <body>
+            <declare name="furia1jog1, furia2jog1, furia1jog2, furia2jog2" type="Integer" array="False" size=""/>
+            <declare name="gosma1, gosma2, escolha" type="Integer" array="False" size=""/>
+            <declare name="continuar" type="Boolean" array="False" size=""/>
+            <assign variable="furia1jog1" expression="1"/>
+            <assign variable="furia2jog1" expression="1"/>
+            <assign variable="furia1jog2" expression="1"/>
+            <assign variable="furia2jog2" expression="1"/>
+            <assign variable="gosma1" expression="2"/>
+            <assign variable="gosma2" expression="2"/>
+            <while expression="(gosma1&gt; 0) AND (gosma2 &gt; 0)">
+                <output expression="&quot;Gosma Jogador 1 = &quot; &amp;gosma1" newline="True"/>
+                <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog1" newline="True"/>
+                <output expression="&quot;Furia Gosma 2 = &quot;  &amp;furia2jog1" newline="True"/>
+                <output expression="&quot;Jogador 1: Escolha (1) Atacar (2) Dividir&quot;" newline="True"/>
+                <input variable="escolha"/>
+                <if expression="escolha = 1">
+                    <then>
+                        <output expression="&quot;Jogador 1 Ataca! Transferindo Furia...&quot;" newline="True"/>
+                        <assign variable="furia1jog2" expression="furia1jog2 + furia1jog1"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="furia1jog2 &gt; 5">
+                    <then>
+                        <output expression="&quot;Uma Gosma Do Jogador 2 Se Desintegrou&quot;" newline="True"/>
+                        <assign variable="gosma2" expression="gosma2 - 1"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="gosma2 = 0">
+                    <then>
+                        <output expression="&quot;Jogador 1 Venceu!!!&quot;" newline="True"/>
+                        <call expression="Novamente"/>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="&quot;Vez Do Jogador 2&quot;" newline="True"/>
+                <output expression="&quot;Gosma Jogador 2 = &quot; &amp;gosma2" newline="True"/>
+                <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog2" newline="True"/>
+                <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia2jog2" newline="True"/>
+                <output expression="&quot;Jogador 2: Escolha (1) Atacar (2) Dividir&quot;" newline="True"/>
+                <input variable="escolha"/>
+                <if expression="escolha = 1">
+                    <then>
+                        <output expression="&quot;Jogador 2 Ataca!! Transferindo Furia...&quot;" newline="True"/>
+                        <assign variable="furia1jog1" expression="furia1jog1 + furia1jog2"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="furia1jog1 &gt; 5">
+                    <then>
+                        <output expression="&quot;A Gosma Do Jogador 1 Se Desintegrou&quot;" newline="True"/>
+                        <assign variable="gosma1" expression="gosma1 - 1"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="gosma1 = 0">
+                    <then>
+                        <output expression="&quot;Jogador 2 Venceu&quot;" newline="True"/>
+                        <call expression="Novamente"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <output expression="&quot;Fim Do Jogo. Jogar Novamente? (True) Sim (False) N&#227;o&quot;" newline="True"/>
+            <input variable="continuar"/>
+            <if expression="continuar = true">
+                <then>
+                    <call expression="GosmasWar"/>
+                </then>
+                <else>
+                    <call expression="Menu"/>
+                </else>
+            </if>
+        </body>
     </function>
     <function name="Menu" type="None" variable="">
         <parameters/>
@@ -133,6 +208,22 @@
                 </else>
             </if>
             <output expression="&quot;Obrigado Por Jogar!&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="Novamente" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="continuar" type="Boolean" array="False" size=""/>
+            <output expression="&quot;Fim Do Jogo. Jogar Novamente? (True) Sim (False) N&#227;o&quot;" newline="True"/>
+            <input variable="continuar"/>
+            <if expression="continuar = true">
+                <then>
+                    <call expression="GosmasWar"/>
+                </then>
+                <else>
+                    <call expression="Menu"/>
+                </else>
+            </if>
         </body>
     </function>
     <function name="PerguntasERespostas" type="None" variable="">
