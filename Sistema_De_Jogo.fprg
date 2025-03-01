@@ -4,9 +4,10 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-02-28 09:37:30 "/>
+        <attribute name="saved" value="2025-02-28 09:00:23 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjg7IjA5OjM3OjMwICI7MTc7MjMwOQ=="/>
+        <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjg7IjA5OjAwOjIzICI7MTg7MjMwMg=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -136,6 +137,153 @@
     </function>
     <function name="PerguntasERespostas" type="None" variable="">
         <parameters/>
-        <body/>
+        <body>
+            <declare name="continuar" type="Boolean" array="False" size=""/>
+            <declare name="Perguntas" type="String" array="True" size="5"/>
+            <declare name="Respostas" type="String" array="True" size="5"/>
+            <declare name="Alternativas1p" type="String" array="True" size="4"/>
+            <declare name="Alternativas2p" type="String" array="True" size="4"/>
+            <declare name="Alternativas3p" type="String" array="True" size="4"/>
+            <declare name="Alternativas4p" type="String" array="True" size="4"/>
+            <declare name="Alternativas5p" type="String" array="True" size="4"/>
+            <declare name="usuario" type="String" array="False" size=""/>
+            <declare name="acertos" type="Integer" array="False" size=""/>
+            <assign variable="acertos" expression="0"/>
+            <assign variable="Perguntas[0]" expression="&quot;Qual &#233; o nome do efeito que faz a bola mudar de dire&#231;&#227;o repentinamente ao tocar a mesa?&quot;"/>
+            <assign variable="Perguntas[1]" expression="&quot;Qual pa&#237;s inventou o ping pong?&quot;"/>
+            <assign variable="Perguntas[2]" expression="&quot;Qual &#233; o nome do movimento em que o jogador faz a bola girar para frente ao rebat&#234;-la?&quot;"/>
+            <assign variable="Perguntas[3]" expression="&quot;Quantos jogadores participam de uma partida de duplas no ping pong?&quot;"/>
+            <assign variable="Perguntas[4]" expression="&quot;Qual &#233; o nome do movimento em que o jogador faz a bola girar para tr&#225;s ao rebat&#234;-la?&quot;"/>
+            <assign variable="Respostas[0]" expression="&quot;A&quot;"/>
+            <assign variable="Respostas[1]" expression="&quot;B&quot;"/>
+            <assign variable="Respostas[2]" expression="&quot;C&quot;"/>
+            <assign variable="Respostas[3]" expression="&quot;C&quot;"/>
+            <assign variable="Respostas[4]" expression="&quot;B&quot;"/>
+            <output expression="&quot;Bem vindo ao Perguntas e Respostas Ping pong Quizz!&quot;" newline="True"/>
+            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+            <output expression="&quot;Responda 1: &quot;&amp;perguntas[0]" newline="True"/>
+            <assign variable="Alternativas1p[0]" expression="&quot;Efeito Magnus&quot;"/>
+            <assign variable="Alternativas1p[1]" expression="&quot;Efeito Topspin&quot;"/>
+            <assign variable="Alternativas1p[2]" expression="&quot;Efeito Backspin&quot;"/>
+            <assign variable="Alternativas1p[3]" expression="&quot;Efeito Sidespin&quot;"/>
+            <output expression="&quot;A)&quot;&amp;Alternativas1p[0]" newline="True"/>
+            <output expression="&quot;B)&quot;&amp;Alternativas1p[1]" newline="True"/>
+            <output expression="&quot;C)&quot;&amp;Alternativas1p[2]" newline="True"/>
+            <output expression="&quot;D)&quot;&amp;Alternativas1p[3]" newline="True"/>
+            <input variable="usuario"/>
+            <if expression="Respostas[0]==usuario">
+                <then>
+                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                    <assign variable="acertos" expression="acertos+(1*1)"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[0]" newline="True"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+            <output expression="&quot;Responda 2: &quot;&amp;perguntas[1]" newline="True"/>
+            <assign variable="Alternativas2p[0]" expression="&quot;China&quot;"/>
+            <assign variable="Alternativas2p[1]" expression="&quot;Inglaterra&quot;"/>
+            <assign variable="Alternativas2p[2]" expression="&quot;Estados Unidos&quot;"/>
+            <assign variable="Alternativas2p[3]" expression="&quot;Japao&quot;"/>
+            <output expression="&quot;A)&quot;&amp;Alternativas2p[0]" newline="True"/>
+            <output expression="&quot;B)&quot;&amp;Alternativas2p[1]" newline="True"/>
+            <output expression="&quot;C)&quot;&amp;Alternativas2p[2]" newline="True"/>
+            <output expression="&quot;D)&quot;&amp;Alternativas2p[3]" newline="True"/>
+            <input variable="usuario"/>
+            <if expression="Respostas[1]==usuario">
+                <then>
+                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                    <assign variable="acertos" expression="acertos+(1*1)"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Que pena Voce errou,a reposta e :&quot;&amp;Respostas[1]" newline="True"/>
+                    <output expression="&quot;Acertos: &quot;&amp;acertos" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+            <output expression="&quot;Responda 3: &quot;&amp;Perguntas[2]" newline="True"/>
+            <assign variable="Alternativas3p[0]" expression="&quot;Backspin&quot;"/>
+            <assign variable="Alternativas3p[1]" expression="&quot;Sidespin&quot;"/>
+            <assign variable="Alternativas3p[2]" expression="&quot;Topspin&quot;"/>
+            <assign variable="Alternativas3p[3]" expression="&quot;Flat hit&quot;"/>
+            <output expression="&quot;A)&quot;&amp;Alternativas3p[0]" newline="True"/>
+            <output expression="&quot;B)&quot;&amp;Alternativas3p[1]" newline="True"/>
+            <output expression="&quot;C)&quot;&amp;Alternativas3p[2]" newline="True"/>
+            <output expression="&quot;D)&quot;&amp;Alternativas3p[3]" newline="True"/>
+            <input variable="usuario"/>
+            <if expression="Respostas[2]==usuario">
+                <then>
+                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                    <assign variable="acertos" expression="acertos+(1*1)"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[2]" newline="True"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+            <output expression="&quot;Responda 4: &quot;&amp;perguntas[3]" newline="True"/>
+            <assign variable="Alternativas4p[0]" expression="&quot;2&quot;"/>
+            <assign variable="Alternativas4p[1]" expression="&quot;3&quot;"/>
+            <assign variable="Alternativas4p[2]" expression="&quot;4&quot;"/>
+            <assign variable="Alternativas4p[3]" expression="&quot;6&quot;"/>
+            <output expression="&quot;A)&quot;&amp;Alternativas4p[0]" newline="True"/>
+            <output expression="&quot;B)&quot;&amp;Alternativas4p[1]" newline="True"/>
+            <output expression="&quot;C)&quot;&amp;Alternativas4p[2]" newline="True"/>
+            <output expression="&quot;D)&quot;&amp;Alternativas4p[3]" newline="True"/>
+            <input variable="usuario"/>
+            <if expression="Respostas[3]==usuario">
+                <then>
+                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                    <assign variable="acertos" expression="acertos+(1*1)"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[3]" newline="True"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+            <output expression="&quot;Responda 5: &quot;&amp;perguntas[4]" newline="True"/>
+            <assign variable="Alternativas5p[0]" expression="&quot;Topspin&quot;"/>
+            <assign variable="Alternativas5p[1]" expression="&quot;Backspin&quot;"/>
+            <assign variable="Alternativas5p[2]" expression="&quot;Sidespin&quot;"/>
+            <assign variable="Alternativas5p[3]" expression="&quot;Flat hit&quot;"/>
+            <output expression="&quot;A)&quot;&amp;Alternativas5p[0]" newline="True"/>
+            <output expression="&quot;B)&quot;&amp;Alternativas5p[1]" newline="True"/>
+            <output expression="&quot;C)&quot;&amp;Alternativas5p[2]" newline="True"/>
+            <output expression="&quot;D)&quot;&amp;Alternativas5p[3]" newline="True"/>
+            <input variable="usuario"/>
+            <if expression="Respostas[4]==usuario">
+                <then>
+                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                    <assign variable="acertos" expression="acertos+(1*1)"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[4]" newline="True"/>
+                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;O Jogo Terminou&quot;" newline="True"/>
+            <output expression="&quot;Jogar de novo? (true p/jogar,false p/ voltar para o menu&quot;" newline="True"/>
+            <input variable="continuar"/>
+            <if expression="continuar=true">
+                <then>
+                    <assign variable="continuar" expression="true"/>
+                    <call expression="PerguntasERespostas"/>
+                </then>
+                <else>
+                    <assign variable="continuar" expression="false"/>
+                    <output expression="&quot;Obrigado por jogar&quot;" newline="True"/>
+                    <call expression="Menu"/>
+                </else>
+            </if>
+        </body>
     </function>
 </flowgorithm>
