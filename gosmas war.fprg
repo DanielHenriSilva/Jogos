@@ -4,9 +4,9 @@
         <attribute name="name" value="gosmas war"/>
         <attribute name="authors" value="Andr&#233;ia Albuquerque"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-03 08:47:20 "/>
+        <attribute name="saved" value="2025-03-04 04:59:18 "/>
         <attribute name="created" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDMtMDE7IjA2OjM5OjU5ICI7NDI4MA=="/>
-        <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDMtMDM7IjA4OjQ3OjIwICI7NDs0Mzgy"/>
+        <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDMtMDQ7IjA0OjU5OjE4ICI7Nzs0Mzky"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -48,8 +48,16 @@
                                         <assign variable="GosmasJogador2[0]" expression="GosmasJogador2[0]+GosmasJogador1[1]"/>
                                     </else>
                                 </if>
-                                <output expression="&quot;J2 Gosma 1 :&quot;&amp;GosmasJogador2[0]" newline="True"/>
-                                <output expression="&quot;J2 Gosma 2 :&quot;&amp;GosmasJogador2[1]" newline="True"/>
+                                <if expression="GosmasJogador2[0]==6">
+                                    <then>
+                                        <output expression="&quot;Gosma 1 do Jogador 2 Destruida&quot;" newline="True"/>
+                                        <output expression="&quot;J2 Gosma 2 :&quot;&amp;GosmasJogador2[1]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;J2 Gosma 1 :&quot;&amp;GosmasJogador2[0]" newline="True"/>
+                                        <output expression="&quot;J2 Gosma 2 :&quot;&amp;GosmasJogador2[1]" newline="True"/>
+                                    </else>
+                                </if>
                             </then>
                             <else>
                                 <output expression="&quot;Voce tem de Furia para atacar &quot;" newline="True"/>
@@ -65,8 +73,16 @@
                                         <assign variable="GosmasJogador2[1]" expression="GosmasJogador2[1]+GosmasJogador1[1]"/>
                                     </else>
                                 </if>
-                                <output expression="&quot;J2 Gosma 1 :&quot;&amp;GosmasJogador2[0]" newline="True"/>
-                                <output expression="&quot;J2 Gosma 2 :&quot;&amp;GosmasJogador2[1]" newline="True"/>
+                                <if expression="GosmasJogador2[1]==6">
+                                    <then>
+                                        <output expression="&quot;Gosma 2 do Jogador 2 Destruida&quot;" newline="True"/>
+                                        <output expression="&quot;J2 Gosma 1 :&quot;&amp;GosmasJogador2[0]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;J2 Gosma 1 :&quot;&amp;GosmasJogador2[0]" newline="True"/>
+                                        <output expression="&quot;J2 Gosma 2 :&quot;&amp;GosmasJogador2[1]" newline="True"/>
+                                    </else>
+                                </if>
                             </else>
                         </if>
                     </then>
@@ -144,8 +160,16 @@
                                         <assign variable="GosmasJogador1[0]" expression="GosmasJogador1[0]+GosmasJogador2[1]"/>
                                     </else>
                                 </if>
-                                <output expression="&quot;J1 Gosma 1 :&quot;&amp;GosmasJogador1[0]" newline="True"/>
-                                <output expression="&quot;J1 Gosma 2 :&quot;&amp;GosmasJogador1[1]" newline="True"/>
+                                <if expression="GosmasJogador1[0]==6">
+                                    <then>
+                                        <output expression="&quot;Gosma 1 do Jogador 1 Destruida&quot;" newline="True"/>
+                                        <output expression="&quot;J1 Gosma 2 :&quot;&amp;GosmasJogador1[1]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;J1 Gosma 1 :&quot;&amp;GosmasJogador1[0]" newline="True"/>
+                                        <output expression="&quot;J1 Gosma 2 :&quot;&amp;GosmasJogador1[1]" newline="True"/>
+                                    </else>
+                                </if>
                             </then>
                             <else>
                                 <output expression="&quot;Voce tem de Furia para atacar &quot;" newline="True"/>
@@ -161,8 +185,16 @@
                                         <assign variable="GosmasJogador1[1]" expression="GosmasJogador1[1]+GosmasJogador2[1]"/>
                                     </else>
                                 </if>
-                                <output expression="&quot;J1 Gosma 1 :&quot;&amp;GosmasJogador1[0]" newline="True"/>
-                                <output expression="&quot;J1 Gosma 2 :&quot;&amp;GosmasJogador1[1]" newline="True"/>
+                                <if expression="GosmasJogador1[1]==6">
+                                    <then>
+                                        <output expression="&quot;Gosma 2 do Jogador 1 Destruida&quot;" newline="True"/>
+                                        <output expression="&quot;J1 Gosma 1 :&quot;&amp;GosmasJogador1[0]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;J1 Gosma 1 :&quot;&amp;GosmasJogador1[0]" newline="True"/>
+                                        <output expression="&quot;J1 Gosma 2 :&quot;&amp;GosmasJogador1[1]" newline="True"/>
+                                    </else>
+                                </if>
                             </else>
                         </if>
                     </then>
