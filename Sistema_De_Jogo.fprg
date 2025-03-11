@@ -4,18 +4,18 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-10 09:33:45 "/>
+        <attribute name="saved" value="2025-03-11 09:06:53 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
         <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDc7IjEyOjAyOjI0ICI7MTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyICgxKS5mcHJnOzgyOTA="/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDk7IjA0OjA5OjEzICI7OTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyLmZwcmc7ODE0NA=="/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMTA7IjA5OjMzOjQ1ICI7MzE7MjI5OQ=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMTE7IjA5OjA2OjUzICI7MzQ7MjMwMg=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="escolha" type="Integer" array="False" size=""/>
-            <output expression="&quot;Escolha Um Jogo (1 a 3)&quot;" newline="True"/>
+            <output expression="&quot;Escolha Um Jogo (1 a 4)&quot;" newline="True"/>
             <input variable="escolha"/>
             <if expression="escolha = 1">
                 <then>
@@ -27,7 +27,12 @@
                             <call expression="PerguntasERespostas"/>
                         </then>
                         <else>
-                            <call expression="GosmasWar"/>
+                            <if expression="escolha = 3">
+                                <then>
+                                    <call expression="GosmasWar"/>
+                                </then>
+                                <else/>
+                            </if>
                         </else>
                     </if>
                 </else>
@@ -500,7 +505,7 @@
         <parameters/>
         <body>
             <declare name="escolha" type="Integer" array="False" size=""/>
-            <output expression="&quot;Escolha Um Jogo (1 a 3)&quot;" newline="True"/>
+            <output expression="&quot;Escolha Um Jogo (1 a 4)&quot;" newline="True"/>
             <input variable="escolha"/>
             <if expression="escolha = 1">
                 <then>
@@ -512,7 +517,12 @@
                             <call expression="PerguntasERespostas"/>
                         </then>
                         <else>
-                            <call expression="GosmasWar"/>
+                            <if expression="escolha = 3">
+                                <then>
+                                    <call expression="GosmasWar"/>
+                                </then>
+                                <else/>
+                            </if>
                         </else>
                     </if>
                 </else>
