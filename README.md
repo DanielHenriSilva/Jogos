@@ -40,5 +40,5 @@ Estrutura do Projeto
 
 
 ---  
-GitHub:[https://github.com/DanielHenriSilva/Jogos/tree/main](https://github.com/DanielHenriSilva/Jogos/tree/main)  
+GitHub: [https://github.com/DanielHenriSilva/Jogos/tree/main](https://github.com/DanielHenriSilva/Jogos/tree/main)  
 Contato: [rafaalbuquerque901@gmail.com]
