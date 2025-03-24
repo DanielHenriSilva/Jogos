@@ -40,5 +40,5 @@ Estrutura do Projeto
 
 
 ---  
-GitHub: [Link para o repositório](https://github.com/[usuário]/[repositório])  
-Contato: [E-mail da equipe ou integrantes]
+GitHub: [Link para o repositório](https://github.com/DanielHenriSilva/Jogos/tree/main)  
+Contato: [rafaalbuquerque901@gmail.com]
