@@ -4,40 +4,50 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-11 09:06:53 "/>
+        <attribute name="saved" value="2025-03-20 12:12:18 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
         <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDc7IjEyOjAyOjI0ICI7MTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyICgxKS5mcHJnOzgyOTA="/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDk7IjA0OjA5OjEzICI7OTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyLmZwcmc7ODE0NA=="/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMTE7IjA5OjA2OjUzICI7MzQ7MjMwMg=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjA7IjEyOjEyOjE4ICI7NDM7MjI5NA=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="escolha" type="Integer" array="False" size=""/>
+            <output expression="&quot;By Daniel Silva &amp; Rafael Albuquerque&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;    BABY'S GAMES    &quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
             <output expression="&quot;Escolha Um Jogo (1 a 4)&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;(1) Cobra na Caixa&quot;" newline="True"/>
+            <output expression="&quot;(2) Perguntas e Respostas&quot;" newline="True"/>
+            <output expression="&quot;(3) Gosmas War&quot;" newline="True"/>
+            <output expression="&quot;(4) Sair&quot;" newline="True"/>
             <input variable="escolha"/>
-            <if expression="escolha = 1">
+            <if expression="escolha == 1">
                 <then>
                     <call expression="Cobra"/>
                 </then>
                 <else>
-                    <if expression="escolha = 2">
+                    <if expression="escolha == 2">
                         <then>
                             <call expression="PerguntasERespostas"/>
                         </then>
                         <else>
-                            <if expression="escolha = 3">
+                            <if expression="escolha == 3">
                                 <then>
                                     <call expression="GosmasWar"/>
                                 </then>
-                                <else/>
+                                <else>
+                                    <output expression="&quot;Obrigado Por Jogar!&quot;" newline="True"/>
+                                </else>
                             </if>
                         </else>
                     </if>
                 </else>
             </if>
-            <output expression="&quot;Obrigado Por Jogar!&quot;" newline="True"/>
         </body>
     </function>
     <function name="Cobra" type="None" variable="">
@@ -55,61 +65,71 @@
             <assign variable="nomes[5]" expression="&quot;Eva&quot;"/>
             <assign variable="nomes[6]" expression="&quot;Gabriel&quot;"/>
             <output expression="&quot;Bem-Vindo ao Desafio da Tumba!&quot;" newline="True"/>
-            <output expression="&quot;Escolha um nome para o jogador 1 (0-6):&quot;" newline="True"/>
-            <output expression="&quot;0-Alice, 1-Bruno, 2-Carlos, 3-Bob, 4-Diana, 5-Eva, 6-Gabriel&quot;" newline="True"/>
+            <output expression="&quot;Deseja Jogar? (1 / 2)&quot;" newline="True"/>
+            <output expression="&quot;1 (SIM) / 2 (N&#195;O)&quot;" newline="True"/>
             <input variable="escolha"/>
-            <assign variable="jogador1" expression="nomes[escolha]"/>
-            <output expression="&quot;Escolha um nome para o jogador 2 (0-6):&quot;" newline="True"/>
-            <output expression="&quot;0-Alice, 1-Bruno, 2-Carlos, 3-Bob, 4-Diana, 5-Eva, 6-Gabriel&quot;" newline="True"/>
-            <input variable="escolha"/>
-            <assign variable="jogador2" expression="nomes[escolha]"/>
-            <assign variable="turno" expression="Random(2)"/>
-            <if expression="turno = 0">
+            <if expression="escolha == 1">
                 <then>
-                    <output expression="&quot;O Primeiro a Jogar &#201;: &quot; &amp;jogador1" newline="True"/>
-                </then>
-                <else>
-                    <output expression="&quot;O Primeiro a Jogar &#201;: &quot; &amp;jogador2" newline="True"/>
-                </else>
-            </if>
-            <assign variable="continuar" expression="true"/>
-            <while expression="continuar=true">
-                <assign variable="posicaoBotao" expression="random(5)"/>
-                <assign variable="posicaoCobra" expression="random(5)"/>
-                <while expression="posicaoBotao=posicaoCobra">
-                    <assign variable="posicaoCobra" expression="random(5)"/>
-                </while>
-                <output expression="&quot;Escolha uma caixa (0 a 4):&quot;" newline="True"/>
-                <input variable="escolha"/>
-                <if expression="escolha = posicaoBotao">
-                    <then>
-                        <output expression="&quot;Parab&#233;ns! Voc&#234; encontrou o bot&#227;o e escapou!&quot;" newline="True"/>
-                        <assign variable="continuar" expression="false"/>
-                    </then>
-                    <else>
-                        <if expression="escolha = posicaoCobra">
+                    <output expression="&quot;Escolha um nome para o jogador 1 (0-6):&quot;" newline="True"/>
+                    <output expression="&quot;0-Alice, 1-Bruno, 2-Carlos, 3-Bob, 4-Diana, 5-Eva, 6-Gabriel&quot;" newline="True"/>
+                    <input variable="escolha"/>
+                    <assign variable="jogador1" expression="nomes[escolha]"/>
+                    <output expression="&quot;Escolha um nome para o jogador 2 (0-6):&quot;" newline="True"/>
+                    <output expression="&quot;0-Alice, 1-Bruno, 2-Carlos, 3-Bob, 4-Diana, 5-Eva, 6-Gabriel&quot;" newline="True"/>
+                    <input variable="escolha"/>
+                    <assign variable="jogador2" expression="nomes[escolha]"/>
+                    <assign variable="turno" expression="Random(2)"/>
+                    <if expression="turno = 0">
+                        <then>
+                            <output expression="&quot;O Primeiro a Jogar &#201;: &quot; &amp;jogador1" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;O Primeiro a Jogar &#201;: &quot; &amp;jogador2" newline="True"/>
+                        </else>
+                    </if>
+                    <assign variable="continuar" expression="true"/>
+                    <while expression="continuar=true">
+                        <assign variable="posicaoBotao" expression="random(5)"/>
+                        <assign variable="posicaoCobra" expression="random(5)"/>
+                        <while expression="posicaoBotao=posicaoCobra">
+                            <assign variable="posicaoCobra" expression="random(5)"/>
+                        </while>
+                        <output expression="&quot;Escolha uma caixa (0 a 4):&quot;" newline="True"/>
+                        <input variable="escolha"/>
+                        <if expression="escolha = posicaoBotao">
                             <then>
-                                <output expression="&quot;Voc&#234; encontrou a cobra! Game over.&quot;" newline="True"/>
+                                <output expression="&quot;Parab&#233;ns! Voc&#234; encontrou o bot&#227;o e escapou!&quot;" newline="True"/>
                                 <assign variable="continuar" expression="false"/>
                             </then>
                             <else>
-                                <output expression="&quot;A caixa est&#225; vazia. Pr&#243;ximo turno.&quot;" newline="True"/>
+                                <if expression="escolha = posicaoCobra">
+                                    <then>
+                                        <output expression="&quot;Voc&#234; encontrou a cobra! Game over.&quot;" newline="True"/>
+                                        <assign variable="continuar" expression="false"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;A caixa est&#225; vazia. Pr&#243;ximo turno.&quot;" newline="True"/>
+                                    </else>
+                                </if>
                             </else>
                         </if>
-                    </else>
-                </if>
-            </while>
-            <output expression="&quot;Deseja jogar novamente? (S/N)&quot;" newline="True"/>
-            <input variable="continuar"/>
-            <if expression="continuar = true">
-                <then>
-                    <assign variable="continuar" expression="true"/>
-                    <call expression="Cobra"/>
+                    </while>
+                    <output expression="&quot;Deseja jogar novamente? (S/N)&quot;" newline="True"/>
+                    <input variable="continuar"/>
+                    <if expression="continuar = true">
+                        <then>
+                            <assign variable="continuar" expression="true"/>
+                            <call expression="Cobra"/>
+                        </then>
+                        <else>
+                            <assign variable="continuar" expression="false"/>
+                            <output expression="&quot;Obrigado por jogar!&quot;" newline="True"/>
+                            <call expression="Menu"/>
+                        </else>
+                    </if>
                 </then>
                 <else>
-                    <assign variable="continuar" expression="false"/>
-                    <output expression="&quot;Obrigado por jogar!&quot;" newline="True"/>
-                    <call expression="Menu"/>
+                    <call expression="Menu&#13;&#10;"/>
                 </else>
             </if>
         </body>
@@ -117,7 +137,6 @@
     <function name="GosmasWar" type="None" variable="">
         <parameters/>
         <body>
-            <output expression="&quot;Bem Vindo ao Gosmas War!!&quot;" newline="True"/>
             <declare name="furia1jog1, furia2jog1, furia1jog2, furia2jog2, gosma1, gosma2, escolha" type="Integer" array="False" size=""/>
             <declare name="continuar" type="Boolean" array="False" size=""/>
             <assign variable="furia1jog1" expression="1"/>
@@ -126,64 +145,47 @@
             <assign variable="furia2jog2" expression="1"/>
             <assign variable="gosma1" expression="2"/>
             <assign variable="gosma2" expression="2"/>
-            <while expression="(gosma1&gt; 0) AND (gosma2 &gt; 0)">
-                <output expression="&quot;VEZ DO JOGADOR 1&quot;" newline="True"/>
-                <output expression="&quot;Gosma Jogador 1 = &quot; &amp;gosma1" newline="True"/>
-                <if expression="furia1jog1 == 0">
-                    <then>
-                        <output expression="&quot;Furia Gosma 2 = &quot;  &amp;furia2jog1" newline="True"/>
-                    </then>
-                    <else>
-                        <if expression="furia2jog1 == 0">
+            <output expression="&quot;Bem Vindo ao Gosmas War!!&quot;" newline="True"/>
+            <output expression="&quot;Deseja Jogar? (1 / 2)&quot;" newline="True"/>
+            <output expression="&quot;1 (Sim) / 2 (N&#227;o)&quot;" newline="True"/>
+            <input variable="escolha"/>
+            <if expression="escolha == 1">
+                <then>
+                    <while expression="(gosma1&gt; 0) AND (gosma2 &gt; 0)">
+                        <output expression="&quot;VEZ DO JOGADOR 1&quot;" newline="True"/>
+                        <output expression="&quot;Gosma Jogador 1 = &quot; &amp;gosma1" newline="True"/>
+                        <if expression="furia1jog1 == 0">
                             <then>
-                                <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog1" newline="True"/>
-                            </then>
-                            <else>
-                                <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog1" newline="True"/>
                                 <output expression="&quot;Furia Gosma 2 = &quot;  &amp;furia2jog1" newline="True"/>
-                            </else>
-                        </if>
-                    </else>
-                </if>
-                <output expression="&quot;Escolha: (1) Atacar / (2) Dividir&quot;" newline="True"/>
-                <input variable="escolha"/>
-                <if expression="escolha == 1">
-                    <then>
-                        <if expression="furia1jog2 == 0">
-                            <then>
-                                <output expression="&quot;Atacar Gosma 2 do J2(2)&quot;" newline="True"/>
                             </then>
                             <else>
-                                <if expression="furia2jog2 == 0">
+                                <if expression="furia2jog1 == 0">
                                     <then>
-                                        <output expression="&quot;Atacar Gosma 1 do J2(1)&quot;" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog1" newline="True"/>
                                     </then>
                                     <else>
-                                        <output expression="&quot;Ataque Uma Das Gosmas Do Jogador 2&quot;" newline="True"/>
-                                        <output expression="&quot;Atacar Gosma 1 (1) / Atacar Gosma 2 (2)&quot;" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog1" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 2 = &quot;  &amp;furia2jog1" newline="True"/>
                                     </else>
                                 </if>
                             </else>
                         </if>
+                        <output expression="&quot;Escolha: (1) Atacar / (2) Dividir&quot;" newline="True"/>
                         <input variable="escolha"/>
                         <if expression="escolha == 1">
                             <then>
-                                <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
-                                <if expression="furia1jog1 == 0">
+                                <if expression="furia1jog2 == 0">
                                     <then>
-                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
-                                        <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
+                                        <output expression="&quot;Atacar Gosma 2 do J2(2)&quot;" newline="True"/>
                                     </then>
                                     <else>
-                                        <if expression="furia2jog1 == 0">
+                                        <if expression="furia2jog2 == 0">
                                             <then>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                <output expression="&quot;Atacar Gosma 1 do J2(1)&quot;" newline="True"/>
                                             </then>
                                             <else>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
-                                                <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia 1 (1)ou Furia (2)?&quot;" newline="True"/>
+                                                <output expression="&quot;Ataque Uma Das Gosmas Do Jogador 2&quot;" newline="True"/>
+                                                <output expression="&quot;Atacar Gosma 1 (1) / Atacar Gosma 2 (2)&quot;" newline="True"/>
                                             </else>
                                         </if>
                                     </else>
@@ -191,180 +193,180 @@
                                 <input variable="escolha"/>
                                 <if expression="escolha == 1">
                                     <then>
-                                        <assign variable="furia1jog2" expression="furia1jog2 + furia1jog1"/>
-                                    </then>
-                                    <else>
-                                        <assign variable="furia1jog2" expression="furia1jog2 + furia2jog1"/>
-                                    </else>
-                                </if>
-                            </then>
-                            <else>
-                                <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
-                                <if expression="furia1jog1 == 0">
-                                    <then>
-                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
-                                        <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
-                                    </then>
-                                    <else>
-                                        <if expression="furia2jog1 == 0">
+                                        <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
+                                        <if expression="furia1jog1 == 0">
                                             <then>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
+                                                <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
                                             </then>
                                             <else>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
+                                                <if expression="furia2jog1 == 0">
+                                                    <then>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
+                                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia 1 (1)ou Furia (2)?&quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                        <input variable="escolha"/>
+                                        <if expression="escolha == 1">
+                                            <then>
+                                                <assign variable="furia1jog2" expression="furia1jog2 + furia1jog1"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="furia1jog2" expression="furia1jog2 + furia2jog1"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
+                                        <if expression="furia1jog1 == 0">
+                                            <then>
                                                 <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia 1 (1) / Furia (2)?&quot;" newline="True"/>
+                                                <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="furia2jog1 == 0">
+                                                    <then>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
+                                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia 1 (1) / Furia (2)?&quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                        <input variable="escolha"/>
+                                        <if expression="escolha == 1">
+                                            <then>
+                                                <assign variable="furia2jog2" expression="furia2jog2 + furia1jog1"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="furia2jog2" expression="furia2jog2 + furia2jog1"/>
                                             </else>
                                         </if>
                                     </else>
                                 </if>
-                                <input variable="escolha"/>
-                                <if expression="escolha == 1">
-                                    <then>
-                                        <assign variable="furia2jog2" expression="furia2jog2 + furia1jog1"/>
-                                    </then>
-                                    <else>
-                                        <assign variable="furia2jog2" expression="furia2jog2 + furia2jog1"/>
-                                    </else>
-                                </if>
-                            </else>
-                        </if>
-                        <output expression="&quot;Jogador 1 Ataca! Transferindo Furia...&quot;" newline="True"/>
-                    </then>
-                    <else>
-                        <output expression="&quot;Dividir Furia da Gosma 1 p/ a Gosma 2? (1)&quot;" newline="True"/>
-                        <output expression="&quot;Dividir Furia da Gosma 2 p/ a Gosma 1? (2)&quot;" newline="True"/>
-                        <input variable="escolha"/>
-                        <if expression="furia1jog1 &lt; 5 &amp;&amp; furia2jog1 &lt; 5">
-                            <then>
-                                <output expression="&quot;Furia Gosma 1 J1: &quot; &amp;furia1jog1" newline="True"/>
-                                <output expression="&quot;Furia Gosma 2 J1: &quot; &amp;furia2jog1" newline="True"/>
-                                <if expression="escolha == 1">
-                                    <then>
-                                        <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 2?&quot;" newline="True"/>
-                                        <input variable="escolha"/>
-                                        <if expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
-                                            <then>
-                                                <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
-                                                <do expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
-                                                    <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 2?&quot;" newline="True"/>
-                                                    <input variable="escolha"/>
-                                                </do>
-                                            </then>
-                                            <else/>
-                                        </if>
-                                        <output expression="&quot;Jogador 1 Dividi! Dividindo Furia...&quot;" newline="True"/>
-                                        <assign variable="furia1jog1" expression="furia1jog1 - escolha"/>
-                                        <assign variable="furia2jog1" expression="furia2jog1 + escolha"/>
-                                    </then>
-                                    <else>
-                                        <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 1?&quot;" newline="True"/>
-                                        <input variable="escolha"/>
-                                        <if expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
-                                            <then>
-                                                <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
-                                                <do expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
-                                                    <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 1?&quot;" newline="True"/>
-                                                    <input variable="escolha"/>
-                                                </do>
-                                            </then>
-                                            <else/>
-                                        </if>
-                                        <output expression="&quot;Jogador 1 Dividi! Dividindo Furia...&quot;" newline="True"/>
-                                        <assign variable="furia2jog1" expression="furia2jog1 - escolha"/>
-                                        <assign variable="furia1jog1" expression="furia1jog1 + escolha"/>
-                                    </else>
-                                </if>
+                                <output expression="&quot;Jogador 1 Ataca! Transferindo Furia...&quot;" newline="True"/>
                             </then>
                             <else>
-                                <output expression="&quot;IMPOSSIVEL DIVIDIR!!&quot;" newline="True"/>
-                                <output expression="&quot;Sua Furia &#233; Muita Alta Para Dividir, Voc&#234; N&#227;o Pode Se Suicidar!!&quot;" newline="True"/>
+                                <output expression="&quot;Dividir Furia da Gosma 1 p/ a Gosma 2? (1)&quot;" newline="True"/>
+                                <output expression="&quot;Dividir Furia da Gosma 2 p/ a Gosma 1? (2)&quot;" newline="True"/>
+                                <input variable="escolha"/>
+                                <if expression="furia1jog1 &lt; 5 &amp;&amp; furia2jog1 &lt; 5">
+                                    <then>
+                                        <output expression="&quot;Furia Gosma 1 J1: &quot; &amp;furia1jog1" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 2 J1: &quot; &amp;furia2jog1" newline="True"/>
+                                        <if expression="escolha == 1">
+                                            <then>
+                                                <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 2?&quot;" newline="True"/>
+                                                <input variable="escolha"/>
+                                                <if expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                                    <then>
+                                                        <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
+                                                        <do expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                                            <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 2?&quot;" newline="True"/>
+                                                            <input variable="escolha"/>
+                                                        </do>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                                <output expression="&quot;Jogador 1 Dividi! Dividindo Furia...&quot;" newline="True"/>
+                                                <assign variable="furia1jog1" expression="furia1jog1 - escolha"/>
+                                                <assign variable="furia2jog1" expression="furia2jog1 + escolha"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 1?&quot;" newline="True"/>
+                                                <input variable="escolha"/>
+                                                <if expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                                    <then>
+                                                        <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
+                                                        <do expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                                            <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 1?&quot;" newline="True"/>
+                                                            <input variable="escolha"/>
+                                                        </do>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                                <output expression="&quot;Jogador 1 Dividi! Dividindo Furia...&quot;" newline="True"/>
+                                                <assign variable="furia2jog1" expression="furia2jog1 - escolha"/>
+                                                <assign variable="furia1jog1" expression="furia1jog1 + escolha"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;IMPOSSIVEL DIVIDIR!!&quot;" newline="True"/>
+                                        <output expression="&quot;Sua Furia &#233; Muita Alta Para Dividir, Voc&#234; N&#227;o Pode Se Suicidar!!&quot;" newline="True"/>
+                                    </else>
+                                </if>
                             </else>
                         </if>
-                    </else>
-                </if>
-                <if expression="furia1jog2 &gt; 5">
-                    <then>
-                        <output expression="&quot;Uma Gosma Do Jogador 2 Se Desintegrou&quot;" newline="True"/>
-                        <assign variable="gosma2" expression="gosma2 - 1"/>
-                        <assign variable="furia1jog2" expression="0"/>
-                    </then>
-                    <else>
-                        <if expression="furia2jog2 &gt; 5">
+                        <if expression="furia1jog2 &gt; 5">
                             <then>
                                 <output expression="&quot;Uma Gosma Do Jogador 2 Se Desintegrou&quot;" newline="True"/>
                                 <assign variable="gosma2" expression="gosma2 - 1"/>
-                                <assign variable="furia2jog2" expression="0"/>
+                                <assign variable="furia1jog2" expression="0"/>
+                            </then>
+                            <else>
+                                <if expression="furia2jog2 &gt; 5">
+                                    <then>
+                                        <output expression="&quot;Uma Gosma Do Jogador 2 Se Desintegrou&quot;" newline="True"/>
+                                        <assign variable="gosma2" expression="gosma2 - 1"/>
+                                        <assign variable="furia2jog2" expression="0"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                        <if expression="gosma2 = 0">
+                            <then>
+                                <output expression="&quot;Jogador 1 Venceu!!!&quot;" newline="True"/>
+                                <call expression="Novamente"/>
                             </then>
                             <else/>
                         </if>
-                    </else>
-                </if>
-                <if expression="gosma2 = 0">
-                    <then>
-                        <output expression="&quot;Jogador 1 Venceu!!!&quot;" newline="True"/>
-                        <call expression="Novamente"/>
-                    </then>
-                    <else/>
-                </if>
-                <output expression="&quot;Vez Do Jogador 2&quot;" newline="True"/>
-                <output expression="&quot;Gosma Jogador 2 = &quot; &amp;gosma2" newline="True"/>
-                <if expression="furia1jog2 == 0">
-                    <then>
-                        <output expression="&quot;Furia Gosma 2 = &quot;  &amp;furia2jog2" newline="True"/>
-                    </then>
-                    <else>
-                        <if expression="furia2jog2 == 0">
+                        <output expression="&quot;Vez Do Jogador 2&quot;" newline="True"/>
+                        <output expression="&quot;Gosma Jogador 2 = &quot; &amp;gosma2" newline="True"/>
+                        <if expression="furia1jog2 == 0">
                             <then>
-                                <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog2" newline="True"/>
-                            </then>
-                            <else>
-                                <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog2" newline="True"/>
                                 <output expression="&quot;Furia Gosma 2 = &quot;  &amp;furia2jog2" newline="True"/>
-                            </else>
-                        </if>
-                    </else>
-                </if>
-                <output expression="&quot;Escolha: (1) Atacar / (2) Dividir&quot;" newline="True"/>
-                <input variable="escolha"/>
-                <if expression="escolha = 1">
-                    <then>
-                        <if expression="furia1jog1 == 0">
-                            <then>
-                                <output expression="&quot;Atacar Gosma 2 do J1(2)&quot;" newline="True"/>
                             </then>
                             <else>
                                 <if expression="furia2jog2 == 0">
                                     <then>
-                                        <output expression="&quot;Atacar Gosma 1 do J1(1)&quot;" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog2" newline="True"/>
                                     </then>
                                     <else>
-                                        <output expression="&quot;Ataque Uma Das Gosmas Do Jogador 2&quot;" newline="True"/>
-                                        <output expression="&quot;Atacar Gosma 1 (1) / Atacar Gosma 2 (2)&quot;" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 1 = &quot; &amp;furia1jog2" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 2 = &quot;  &amp;furia2jog2" newline="True"/>
                                     </else>
                                 </if>
                             </else>
                         </if>
+                        <output expression="&quot;Escolha: (1) Atacar / (2) Dividir&quot;" newline="True"/>
                         <input variable="escolha"/>
-                        <if expression="escolha == 1">
+                        <if expression="escolha = 1">
                             <then>
-                                <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
-                                <if expression="furia1jog2 == 0">
+                                <if expression="furia1jog1 == 0">
                                     <then>
-                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
-                                        <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
+                                        <output expression="&quot;Atacar Gosma 2 do J1(2)&quot;" newline="True"/>
                                     </then>
                                     <else>
                                         <if expression="furia2jog2 == 0">
                                             <then>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                <output expression="&quot;Atacar Gosma 1 do J1(1)&quot;" newline="True"/>
                                             </then>
                                             <else>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
-                                                <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia 1( 1) / Furia com 2 (2) ? &quot;" newline="True"/>
+                                                <output expression="&quot;Ataque Uma Das Gosmas Do Jogador 2&quot;" newline="True"/>
+                                                <output expression="&quot;Atacar Gosma 1 (1) / Atacar Gosma 2 (2)&quot;" newline="True"/>
                                             </else>
                                         </if>
                                     </else>
@@ -372,131 +374,159 @@
                                 <input variable="escolha"/>
                                 <if expression="escolha == 1">
                                     <then>
-                                        <assign variable="furia1jog1" expression="furia1jog1 + furia1jog2"/>
-                                    </then>
-                                    <else>
-                                        <assign variable="furia1jog1" expression="furia1jog1 + furia2jog2"/>
-                                    </else>
-                                </if>
-                            </then>
-                            <else>
-                                <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
-                                <if expression="furia1jog2 == 0">
-                                    <then>
-                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
-                                        <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
-                                    </then>
-                                    <else>
-                                        <if expression="furia2jog2 == 0">
+                                        <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
+                                        <if expression="furia1jog2 == 0">
                                             <then>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
+                                                <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
                                             </then>
                                             <else>
-                                                <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
+                                                <if expression="furia2jog2 == 0">
+                                                    <then>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
+                                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia 1( 1) / Furia com 2 (2) ? &quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                        <input variable="escolha"/>
+                                        <if expression="escolha == 1">
+                                            <then>
+                                                <assign variable="furia1jog1" expression="furia1jog1 + furia1jog2"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="furia1jog1" expression="furia1jog1 + furia2jog2"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Voc&#234; Tem De Furia Para Atacar&quot;" newline="True"/>
+                                        <if expression="furia1jog2 == 0">
+                                            <then>
                                                 <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
-                                                <output expression="&quot;Atacar com Furia 1( 1) / Furia com 2 (2) ? &quot;" newline="True"/>
+                                                <output expression="&quot;Atacar com Furia (2)&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="furia2jog2 == 0">
+                                                    <then>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia (1)&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
+                                                        <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia 1( 1) / Furia com 2 (2) ? &quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                        <input variable="escolha"/>
+                                        <if expression="escolha == 1">
+                                            <then>
+                                                <assign variable="furia2jog1" expression="furia2jog1 + furia1jog2"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="furia2jog1" expression="furia2jog1 + furia2jog2"/>
                                             </else>
                                         </if>
                                     </else>
                                 </if>
-                                <input variable="escolha"/>
-                                <if expression="escolha == 1">
-                                    <then>
-                                        <assign variable="furia2jog1" expression="furia2jog1 + furia1jog2"/>
-                                    </then>
-                                    <else>
-                                        <assign variable="furia2jog1" expression="furia2jog1 + furia2jog2"/>
-                                    </else>
-                                </if>
-                            </else>
-                        </if>
-                        <output expression="&quot;Jogador 2 Ataca!! Transferindo Furia...&quot;" newline="True"/>
-                    </then>
-                    <else>
-                        <output expression="&quot;Dividir Furia da Gosma 1 p/ a Gosma 2? (1)&quot;" newline="True"/>
-                        <output expression="&quot;Dividir Furia da Gosma 2 p/ a Gosma 1? (2)&quot;" newline="True"/>
-                        <if expression="furia1jog2 &lt; 5 &amp;&amp; furia2jog2 &lt; 5">
-                            <then>
-                                <output expression="&quot;Furia Gosma 1 J2: &quot; &amp;furia1jog2" newline="True"/>
-                                <output expression="&quot;Furia Gosma 2 J2: &quot; &amp;furia2jog2" newline="True"/>
-                                <if expression="escolha == 1">
-                                    <then>
-                                        <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 2?&quot;" newline="True"/>
-                                        <input variable="escolha"/>
-                                        <if expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
-                                            <then>
-                                                <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
-                                                <do expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
-                                                    <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma2?&quot;" newline="True"/>
-                                                    <input variable="escolha"/>
-                                                </do>
-                                            </then>
-                                            <else/>
-                                        </if>
-                                        <output expression="&quot;Jogador 2 Dividi! Dividindo Furia...&quot;" newline="True"/>
-                                        <assign variable="furia1jog2" expression="furia1jog2 - escolha"/>
-                                        <assign variable="furia2jog2" expression="furia2jog2 + escolha"/>
-                                    </then>
-                                    <else>
-                                        <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 1?&quot;" newline="True"/>
-                                        <input variable="escolha"/>
-                                        <if expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
-                                            <then>
-                                                <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
-                                                <do expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
-                                                    <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma1?&quot;" newline="True"/>
-                                                    <input variable="escolha"/>
-                                                </do>
-                                            </then>
-                                            <else/>
-                                        </if>
-                                        <output expression="&quot;Jogador 2 Dividi! Dividindo Furia...&quot;" newline="True"/>
-                                        <assign variable="furia2jog2" expression="furia2jog2 - escolha"/>
-                                        <assign variable="furia1jog2" expression="furia1jog2 + escolha"/>
-                                    </else>
-                                </if>
+                                <output expression="&quot;Jogador 2 Ataca!! Transferindo Furia...&quot;" newline="True"/>
                             </then>
                             <else>
-                                <output expression="&quot;IMPOSSIVEL DIVIDIR!!&quot;" newline="True"/>
-                                <output expression="&quot;Sua Furia &#233; Muita Alta Para Dividir, Voc&#234; N&#227;o Pode Se Suicidar!!&quot;" newline="True"/>
+                                <output expression="&quot;Dividir Furia da Gosma 1 p/ a Gosma 2? (1)&quot;" newline="True"/>
+                                <output expression="&quot;Dividir Furia da Gosma 2 p/ a Gosma 1? (2)&quot;" newline="True"/>
+                                <if expression="furia1jog2 &lt; 5 &amp;&amp; furia2jog2 &lt; 5">
+                                    <then>
+                                        <output expression="&quot;Furia Gosma 1 J2: &quot; &amp;furia1jog2" newline="True"/>
+                                        <output expression="&quot;Furia Gosma 2 J2: &quot; &amp;furia2jog2" newline="True"/>
+                                        <if expression="escolha == 1">
+                                            <then>
+                                                <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 2?&quot;" newline="True"/>
+                                                <input variable="escolha"/>
+                                                <if expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                                    <then>
+                                                        <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
+                                                        <do expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                                            <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma2?&quot;" newline="True"/>
+                                                            <input variable="escolha"/>
+                                                        </do>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                                <output expression="&quot;Jogador 2 Dividi! Dividindo Furia...&quot;" newline="True"/>
+                                                <assign variable="furia1jog2" expression="furia1jog2 - escolha"/>
+                                                <assign variable="furia2jog2" expression="furia2jog2 + escolha"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma 1?&quot;" newline="True"/>
+                                                <input variable="escolha"/>
+                                                <if expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                                    <then>
+                                                        <output expression="&quot;Voc&#234; N&#227;o Tem Furia Suficiente&quot;" newline="True"/>
+                                                        <do expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                                            <output expression="&quot;Quanto De Furia Deseja Transferir Para a Gosma1?&quot;" newline="True"/>
+                                                            <input variable="escolha"/>
+                                                        </do>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                                <output expression="&quot;Jogador 2 Dividi! Dividindo Furia...&quot;" newline="True"/>
+                                                <assign variable="furia2jog2" expression="furia2jog2 - escolha"/>
+                                                <assign variable="furia1jog2" expression="furia1jog2 + escolha"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;IMPOSSIVEL DIVIDIR!!&quot;" newline="True"/>
+                                        <output expression="&quot;Sua Furia &#233; Muita Alta Para Dividir, Voc&#234; N&#227;o Pode Se Suicidar!!&quot;" newline="True"/>
+                                    </else>
+                                </if>
                             </else>
                         </if>
-                    </else>
-                </if>
-                <if expression="furia1jog1 &gt; 5">
-                    <then>
-                        <output expression="&quot;A Gosma Do Jogador 1 Se Desintegrou&quot;" newline="True"/>
-                        <assign variable="gosma1" expression="gosma1 - 1"/>
-                        <assign variable="furia1jog1" expression="0"/>
-                    </then>
-                    <else>
-                        <if expression="furia2jog1 &gt; 5">
+                        <if expression="furia1jog1 &gt; 5">
                             <then>
                                 <output expression="&quot;A Gosma Do Jogador 1 Se Desintegrou&quot;" newline="True"/>
                                 <assign variable="gosma1" expression="gosma1 - 1"/>
-                                <assign variable="furia2jog1" expression="0"/>
+                                <assign variable="furia1jog1" expression="0"/>
+                            </then>
+                            <else>
+                                <if expression="furia2jog1 &gt; 5">
+                                    <then>
+                                        <output expression="&quot;A Gosma Do Jogador 1 Se Desintegrou&quot;" newline="True"/>
+                                        <assign variable="gosma1" expression="gosma1 - 1"/>
+                                        <assign variable="furia2jog1" expression="0"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                        <if expression="gosma1 = 0">
+                            <then>
+                                <output expression="&quot;!!Jogador 2 Venceu!!&quot;" newline="True"/>
+                                <call expression="Novamente"/>
                             </then>
                             <else/>
                         </if>
-                    </else>
-                </if>
-                <if expression="gosma1 = 0">
-                    <then>
-                        <output expression="&quot;!!Jogador 2 Venceu!!&quot;" newline="True"/>
-                        <call expression="Novamente"/>
-                    </then>
-                    <else/>
-                </if>
-            </while>
-            <output expression="&quot;Fim Do Jogo. Jogar Novamente? (True) Sim (False) N&#227;o&quot;" newline="True"/>
-            <input variable="continuar"/>
-            <if expression="continuar = true">
-                <then>
-                    <call expression="GosmasWar"/>
+                    </while>
+                    <output expression="&quot;Fim Do Jogo. Jogar Novamente? (True) Sim (False) N&#227;o&quot;" newline="True"/>
+                    <input variable="continuar"/>
+                    <if expression="continuar = true">
+                        <then>
+                            <call expression="GosmasWar"/>
+                        </then>
+                        <else>
+                            <call expression="Menu"/>
+                        </else>
+                    </if>
                 </then>
                 <else>
-                    <call expression="Menu"/>
+                    <call expression="Menu&#13;&#10;"/>
                 </else>
             </if>
         </body>
@@ -505,19 +535,28 @@
         <parameters/>
         <body>
             <declare name="escolha" type="Integer" array="False" size=""/>
+            <output expression="&quot;By Daniel Silva &amp; Rafael Albuquerque&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;    BABY'S GAMES    &quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
             <output expression="&quot;Escolha Um Jogo (1 a 4)&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;(1) Cobra na Caixa&quot;" newline="True"/>
+            <output expression="&quot;(2) Perguntas e Respostas&quot;" newline="True"/>
+            <output expression="&quot;(3) Gosmas War&quot;" newline="True"/>
+            <output expression="&quot;(4) Sair&quot;" newline="True"/>
             <input variable="escolha"/>
-            <if expression="escolha = 1">
+            <if expression="escolha == 1">
                 <then>
                     <call expression="Cobra"/>
                 </then>
                 <else>
-                    <if expression="escolha = 2">
+                    <if expression="escolha == 2">
                         <then>
                             <call expression="PerguntasERespostas"/>
                         </then>
                         <else>
-                            <if expression="escolha = 3">
+                            <if expression="escolha == 3">
                                 <then>
                                     <call expression="GosmasWar"/>
                                 </then>
@@ -560,6 +599,7 @@
             <declare name="usuario" type="String" array="False" size=""/>
             <declare name="acertos" type="Integer" array="False" size=""/>
             <assign variable="acertos" expression="0"/>
+            <declare name="escolha" type="Integer" array="False" size=""/>
             <assign variable="Perguntas[0]" expression="&quot;Qual &#233; o nome do efeito que faz a bola mudar de dire&#231;&#227;o repentinamente ao tocar a mesa?&quot;"/>
             <assign variable="Perguntas[1]" expression="&quot;Qual pa&#237;s inventou o ping pong?&quot;"/>
             <assign variable="Perguntas[2]" expression="&quot;Qual &#233; o nome do movimento em que o jogador faz a bola girar para frente ao rebat&#234;-la?&quot;"/>
@@ -571,128 +611,138 @@
             <assign variable="Respostas[3]" expression="&quot;C&quot;"/>
             <assign variable="Respostas[4]" expression="&quot;B&quot;"/>
             <output expression="&quot;Bem vindo ao Perguntas e Respostas Ping pong Quizz!&quot;" newline="True"/>
-            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
-            <output expression="&quot;Responda 1: &quot;&amp;perguntas[0]" newline="True"/>
-            <assign variable="Alternativas1p[0]" expression="&quot;Efeito Magnus&quot;"/>
-            <assign variable="Alternativas1p[1]" expression="&quot;Efeito Topspin&quot;"/>
-            <assign variable="Alternativas1p[2]" expression="&quot;Efeito Backspin&quot;"/>
-            <assign variable="Alternativas1p[3]" expression="&quot;Efeito Sidespin&quot;"/>
-            <output expression="&quot;A)&quot;&amp;Alternativas1p[0]" newline="True"/>
-            <output expression="&quot;B)&quot;&amp;Alternativas1p[1]" newline="True"/>
-            <output expression="&quot;C)&quot;&amp;Alternativas1p[2]" newline="True"/>
-            <output expression="&quot;D)&quot;&amp;Alternativas1p[3]" newline="True"/>
-            <input variable="usuario"/>
-            <if expression="Respostas[0]==usuario">
+            <output expression="&quot;Deseja Jogar? (1 / 2)&quot;" newline="True"/>
+            <output expression="&quot;1 (Sim) / 2 (N&#227;o)&quot;" newline="True"/>
+            <input variable="escolha"/>
+            <if expression="escolha == 1">
                 <then>
-                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
-                    <assign variable="acertos" expression="acertos+(1*1)"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                    <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+                    <output expression="&quot;Responda 1: &quot;&amp;perguntas[0]" newline="True"/>
+                    <assign variable="Alternativas1p[0]" expression="&quot;Efeito Magnus&quot;"/>
+                    <assign variable="Alternativas1p[1]" expression="&quot;Efeito Topspin&quot;"/>
+                    <assign variable="Alternativas1p[2]" expression="&quot;Efeito Backspin&quot;"/>
+                    <assign variable="Alternativas1p[3]" expression="&quot;Efeito Sidespin&quot;"/>
+                    <output expression="&quot;A)&quot;&amp;Alternativas1p[0]" newline="True"/>
+                    <output expression="&quot;B)&quot;&amp;Alternativas1p[1]" newline="True"/>
+                    <output expression="&quot;C)&quot;&amp;Alternativas1p[2]" newline="True"/>
+                    <output expression="&quot;D)&quot;&amp;Alternativas1p[3]" newline="True"/>
+                    <input variable="usuario"/>
+                    <if expression="Respostas[0]==usuario">
+                        <then>
+                            <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                            <assign variable="acertos" expression="acertos+(1*1)"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[0]" newline="True"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+                    <output expression="&quot;Responda 2: &quot;&amp;perguntas[1]" newline="True"/>
+                    <assign variable="Alternativas2p[0]" expression="&quot;China&quot;"/>
+                    <assign variable="Alternativas2p[1]" expression="&quot;Inglaterra&quot;"/>
+                    <assign variable="Alternativas2p[2]" expression="&quot;Estados Unidos&quot;"/>
+                    <assign variable="Alternativas2p[3]" expression="&quot;Japao&quot;"/>
+                    <output expression="&quot;A)&quot;&amp;Alternativas2p[0]" newline="True"/>
+                    <output expression="&quot;B)&quot;&amp;Alternativas2p[1]" newline="True"/>
+                    <output expression="&quot;C)&quot;&amp;Alternativas2p[2]" newline="True"/>
+                    <output expression="&quot;D)&quot;&amp;Alternativas2p[3]" newline="True"/>
+                    <input variable="usuario"/>
+                    <if expression="Respostas[1]==usuario">
+                        <then>
+                            <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                            <assign variable="acertos" expression="acertos+(1*1)"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Que pena Voce errou,a reposta e :&quot;&amp;Respostas[1]" newline="True"/>
+                            <output expression="&quot;Acertos: &quot;&amp;acertos" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+                    <output expression="&quot;Responda 3: &quot;&amp;Perguntas[2]" newline="True"/>
+                    <assign variable="Alternativas3p[0]" expression="&quot;Backspin&quot;"/>
+                    <assign variable="Alternativas3p[1]" expression="&quot;Sidespin&quot;"/>
+                    <assign variable="Alternativas3p[2]" expression="&quot;Topspin&quot;"/>
+                    <assign variable="Alternativas3p[3]" expression="&quot;Flat hit&quot;"/>
+                    <output expression="&quot;A)&quot;&amp;Alternativas3p[0]" newline="True"/>
+                    <output expression="&quot;B)&quot;&amp;Alternativas3p[1]" newline="True"/>
+                    <output expression="&quot;C)&quot;&amp;Alternativas3p[2]" newline="True"/>
+                    <output expression="&quot;D)&quot;&amp;Alternativas3p[3]" newline="True"/>
+                    <input variable="usuario"/>
+                    <if expression="Respostas[2]==usuario">
+                        <then>
+                            <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                            <assign variable="acertos" expression="acertos+(1*1)"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[2]" newline="True"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+                    <output expression="&quot;Responda 4: &quot;&amp;perguntas[3]" newline="True"/>
+                    <assign variable="Alternativas4p[0]" expression="&quot;2&quot;"/>
+                    <assign variable="Alternativas4p[1]" expression="&quot;3&quot;"/>
+                    <assign variable="Alternativas4p[2]" expression="&quot;4&quot;"/>
+                    <assign variable="Alternativas4p[3]" expression="&quot;6&quot;"/>
+                    <output expression="&quot;A)&quot;&amp;Alternativas4p[0]" newline="True"/>
+                    <output expression="&quot;B)&quot;&amp;Alternativas4p[1]" newline="True"/>
+                    <output expression="&quot;C)&quot;&amp;Alternativas4p[2]" newline="True"/>
+                    <output expression="&quot;D)&quot;&amp;Alternativas4p[3]" newline="True"/>
+                    <input variable="usuario"/>
+                    <if expression="Respostas[3]==usuario">
+                        <then>
+                            <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                            <assign variable="acertos" expression="acertos+(1*1)"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[3]" newline="True"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
+                    <output expression="&quot;Responda 5: &quot;&amp;perguntas[4]" newline="True"/>
+                    <assign variable="Alternativas5p[0]" expression="&quot;Topspin&quot;"/>
+                    <assign variable="Alternativas5p[1]" expression="&quot;Backspin&quot;"/>
+                    <assign variable="Alternativas5p[2]" expression="&quot;Sidespin&quot;"/>
+                    <assign variable="Alternativas5p[3]" expression="&quot;Flat hit&quot;"/>
+                    <output expression="&quot;A)&quot;&amp;Alternativas5p[0]" newline="True"/>
+                    <output expression="&quot;B)&quot;&amp;Alternativas5p[1]" newline="True"/>
+                    <output expression="&quot;C)&quot;&amp;Alternativas5p[2]" newline="True"/>
+                    <output expression="&quot;D)&quot;&amp;Alternativas5p[3]" newline="True"/>
+                    <input variable="usuario"/>
+                    <if expression="Respostas[4]==usuario">
+                        <then>
+                            <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
+                            <assign variable="acertos" expression="acertos+(1*1)"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[4]" newline="True"/>
+                            <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;O Jogo Terminou&quot;" newline="True"/>
+                    <output expression="&quot;Jogar de novo? (true p/jogar,false p/ voltar para o menu&quot;" newline="True"/>
+                    <input variable="continuar"/>
+                    <if expression="continuar=true">
+                        <then>
+                            <assign variable="continuar" expression="true"/>
+                            <call expression="PerguntasERespostas"/>
+                        </then>
+                        <else>
+                            <assign variable="continuar" expression="false"/>
+                            <output expression="&quot;Obrigado por jogar&quot;" newline="True"/>
+                            <call expression="Menu"/>
+                        </else>
+                    </if>
                 </then>
                 <else>
-                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[0]" newline="True"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </else>
-            </if>
-            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
-            <output expression="&quot;Responda 2: &quot;&amp;perguntas[1]" newline="True"/>
-            <assign variable="Alternativas2p[0]" expression="&quot;China&quot;"/>
-            <assign variable="Alternativas2p[1]" expression="&quot;Inglaterra&quot;"/>
-            <assign variable="Alternativas2p[2]" expression="&quot;Estados Unidos&quot;"/>
-            <assign variable="Alternativas2p[3]" expression="&quot;Japao&quot;"/>
-            <output expression="&quot;A)&quot;&amp;Alternativas2p[0]" newline="True"/>
-            <output expression="&quot;B)&quot;&amp;Alternativas2p[1]" newline="True"/>
-            <output expression="&quot;C)&quot;&amp;Alternativas2p[2]" newline="True"/>
-            <output expression="&quot;D)&quot;&amp;Alternativas2p[3]" newline="True"/>
-            <input variable="usuario"/>
-            <if expression="Respostas[1]==usuario">
-                <then>
-                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
-                    <assign variable="acertos" expression="acertos+(1*1)"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </then>
-                <else>
-                    <output expression="&quot;Que pena Voce errou,a reposta e :&quot;&amp;Respostas[1]" newline="True"/>
-                    <output expression="&quot;Acertos: &quot;&amp;acertos" newline="True"/>
-                </else>
-            </if>
-            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
-            <output expression="&quot;Responda 3: &quot;&amp;Perguntas[2]" newline="True"/>
-            <assign variable="Alternativas3p[0]" expression="&quot;Backspin&quot;"/>
-            <assign variable="Alternativas3p[1]" expression="&quot;Sidespin&quot;"/>
-            <assign variable="Alternativas3p[2]" expression="&quot;Topspin&quot;"/>
-            <assign variable="Alternativas3p[3]" expression="&quot;Flat hit&quot;"/>
-            <output expression="&quot;A)&quot;&amp;Alternativas3p[0]" newline="True"/>
-            <output expression="&quot;B)&quot;&amp;Alternativas3p[1]" newline="True"/>
-            <output expression="&quot;C)&quot;&amp;Alternativas3p[2]" newline="True"/>
-            <output expression="&quot;D)&quot;&amp;Alternativas3p[3]" newline="True"/>
-            <input variable="usuario"/>
-            <if expression="Respostas[2]==usuario">
-                <then>
-                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
-                    <assign variable="acertos" expression="acertos+(1*1)"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </then>
-                <else>
-                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[2]" newline="True"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </else>
-            </if>
-            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
-            <output expression="&quot;Responda 4: &quot;&amp;perguntas[3]" newline="True"/>
-            <assign variable="Alternativas4p[0]" expression="&quot;2&quot;"/>
-            <assign variable="Alternativas4p[1]" expression="&quot;3&quot;"/>
-            <assign variable="Alternativas4p[2]" expression="&quot;4&quot;"/>
-            <assign variable="Alternativas4p[3]" expression="&quot;6&quot;"/>
-            <output expression="&quot;A)&quot;&amp;Alternativas4p[0]" newline="True"/>
-            <output expression="&quot;B)&quot;&amp;Alternativas4p[1]" newline="True"/>
-            <output expression="&quot;C)&quot;&amp;Alternativas4p[2]" newline="True"/>
-            <output expression="&quot;D)&quot;&amp;Alternativas4p[3]" newline="True"/>
-            <input variable="usuario"/>
-            <if expression="Respostas[3]==usuario">
-                <then>
-                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
-                    <assign variable="acertos" expression="acertos+(1*1)"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </then>
-                <else>
-                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[3]" newline="True"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </else>
-            </if>
-            <output expression="&quot;OBS:RESPONDA AS PERGUNTAS COM AS LETRAS DE 'A' A 'D' EM MAI&#218;SCULO!!!!!&quot;" newline="True"/>
-            <output expression="&quot;Responda 5: &quot;&amp;perguntas[4]" newline="True"/>
-            <assign variable="Alternativas5p[0]" expression="&quot;Topspin&quot;"/>
-            <assign variable="Alternativas5p[1]" expression="&quot;Backspin&quot;"/>
-            <assign variable="Alternativas5p[2]" expression="&quot;Sidespin&quot;"/>
-            <assign variable="Alternativas5p[3]" expression="&quot;Flat hit&quot;"/>
-            <output expression="&quot;A)&quot;&amp;Alternativas5p[0]" newline="True"/>
-            <output expression="&quot;B)&quot;&amp;Alternativas5p[1]" newline="True"/>
-            <output expression="&quot;C)&quot;&amp;Alternativas5p[2]" newline="True"/>
-            <output expression="&quot;D)&quot;&amp;Alternativas5p[3]" newline="True"/>
-            <input variable="usuario"/>
-            <if expression="Respostas[4]==usuario">
-                <then>
-                    <output expression="&quot;Voce Acertou,parabens Baby !!&quot;" newline="True"/>
-                    <assign variable="acertos" expression="acertos+(1*1)"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </then>
-                <else>
-                    <output expression="&quot; coitadinho...Voce errou a resposta e : &quot; &amp;Respostas[4]" newline="True"/>
-                    <output expression="&quot;Acertos :&quot;&amp;acertos" newline="True"/>
-                </else>
-            </if>
-            <output expression="&quot;O Jogo Terminou&quot;" newline="True"/>
-            <output expression="&quot;Jogar de novo? (true p/jogar,false p/ voltar para o menu&quot;" newline="True"/>
-            <input variable="continuar"/>
-            <if expression="continuar=true">
-                <then>
-                    <assign variable="continuar" expression="true"/>
-                    <call expression="PerguntasERespostas"/>
-                </then>
-                <else>
-                    <assign variable="continuar" expression="false"/>
-                    <output expression="&quot;Obrigado por jogar&quot;" newline="True"/>
-                    <call expression="Menu"/>
+                    <call expression="Menu&#13;&#10;"/>
                 </else>
             </if>
         </body>
