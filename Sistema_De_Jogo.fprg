@@ -4,12 +4,12 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-20 12:12:18 "/>
+        <attribute name="saved" value="2025-03-25 11:41:22 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
         <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDc7IjEyOjAyOjI0ICI7MTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyICgxKS5mcHJnOzgyOTA="/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDk7IjA0OjA5OjEzICI7OTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyLmZwcmc7ODE0NA=="/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjA7IjEyOjEyOjE4ICI7NDM7MjI5NA=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjU7IjExOjQxOjIyICI7NDU7MjI5Nw=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -64,6 +64,11 @@
             <assign variable="nomes[4]" expression="&quot;Diana&quot;"/>
             <assign variable="nomes[5]" expression="&quot;Eva&quot;"/>
             <assign variable="nomes[6]" expression="&quot;Gabriel&quot;"/>
+            <output expression="&quot;A hist&#243;ria do jogo se passa dentro de uma tumba eg&#237;pcia onde dois exploradores ficaram presos. No centro da sala, h&#225; cinco caixas: uma delas cont&#233;m o bot&#227;o para abrir a porta, enquanto uma outra esconde uma cobra mortal. A cada rodada, o local do bot&#227;o e da cobra muda de caixa de forma aleat&#243;ria, aumentando o desafio e a imprevisibilidade do jogo.&quot;" newline="True"/>
+            <output expression="&quot;&#9679; Cada jogador deve escolher um nome a partir de uma lista de sete op&#231;&#245;es predefinidas, e o computador sortear&#225; quem come&#231;ar&#225;;&quot;" newline="True"/>
+            <output expression="&quot;&#9679; O jogador escolhido seleciona uma caixa, e o sistema informar&#225; se h&#225; uma cobra, o bot&#227;o ou se est&#225; vazia;&quot;" newline="True"/>
+            <output expression="&quot;&#9679; O jogo prosseguir&#225; at&#233; que algu&#233;m encontre a cobra (perde) ou o bot&#227;o(vence);&quot;" newline="True"/>
+            <output expression="&quot;&#9679; Ao t&#233;rmino, o jogador poder&#225; optar por jogar novamente ou retornar ao menu principal.&quot;" newline="True"/>
             <output expression="&quot;Bem-Vindo ao Desafio da Tumba!&quot;" newline="True"/>
             <output expression="&quot;Deseja Jogar? (1 / 2)&quot;" newline="True"/>
             <output expression="&quot;1 (SIM) / 2 (N&#195;O)&quot;" newline="True"/>
@@ -145,6 +150,12 @@
             <assign variable="furia2jog2" expression="1"/>
             <assign variable="gosma1" expression="2"/>
             <assign variable="gosma2" expression="2"/>
+            <output expression="&quot;Neste jogo de estrat&#233;gia, os jogadores controlam criaturas chamadas Gousmas, que podem se dividir e acumular f&#250;ria ao serem atacadas.&quot;" newline="True"/>
+            <output expression="&quot;&#9679; Cada jogador inicia com duas Gousmas, cada uma com n&#237;vel de f&#250;ria 1;&quot;" newline="True"/>
+            <output expression="&quot;&#9679; Quando uma Gousma ataca outra, transfere todo o seu n&#237;vel de f&#250;ria para a Gousma atacada;&quot;" newline="True"/>
+            <output expression="&quot;&#9679; Se uma Gousma atingir um n&#237;vel de f&#250;ria maior que 5, ela se desintegra;&quot;" newline="True"/>
+            <output expression="&quot;&#9679; O jogador pode optar por dividir uma Gousma, transferindo uma parte da f&#250;ria para uma nova Gousma (respeitando o limite de duas Gousmas por jogador);&quot;" newline="True"/>
+            <output expression="&quot;&#9679; O jogador que perder todas as suas Gousmas ser&#225; derrotado;&quot;" newline="True"/>
             <output expression="&quot;Bem Vindo ao Gosmas War!!&quot;" newline="True"/>
             <output expression="&quot;Deseja Jogar? (1 / 2)&quot;" newline="True"/>
             <output expression="&quot;1 (Sim) / 2 (N&#227;o)&quot;" newline="True"/>
@@ -208,7 +219,7 @@
                                                     <else>
                                                         <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog1" newline="True"/>
                                                         <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog1" newline="True"/>
-                                                        <output expression="&quot;Atacar com Furia 1 (1)ou Furia (2)?&quot;" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia 1 (1) / Furia (2)?&quot;" newline="True"/>
                                                     </else>
                                                 </if>
                                             </else>
@@ -610,6 +621,9 @@
             <assign variable="Respostas[2]" expression="&quot;C&quot;"/>
             <assign variable="Respostas[3]" expression="&quot;C&quot;"/>
             <assign variable="Respostas[4]" expression="&quot;B&quot;"/>
+            <output expression="&quot;Neste jogo, o computador apresenta uma pergunta com quatro alternativas e solicita que o usu&#225;rio escolha a resposta correta. Ap&#243;s a sele&#231;&#227;o, o sistema indicar&#225; se a resposta est&#225; correta ou incorreta. Caso seja incorreta, ser&#225; exibida a resposta correta.&quot;" newline="True"/>
+            <output expression="&quot;&#9679; O jogo conter&#225; um total de cinco perguntas fixas;&quot;" newline="True"/>
+            <output expression="&quot;&#9679; Ao finalizar, o jogador poder&#225; optar por jogar novamente ou voltar ao menu principal.&quot;" newline="True"/>
             <output expression="&quot;Bem vindo ao Perguntas e Respostas Ping pong Quizz!&quot;" newline="True"/>
             <output expression="&quot;Deseja Jogar? (1 / 2)&quot;" newline="True"/>
             <output expression="&quot;1 (Sim) / 2 (N&#227;o)&quot;" newline="True"/>
