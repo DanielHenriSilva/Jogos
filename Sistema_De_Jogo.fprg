@@ -4,12 +4,12 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-25 11:41:22 "/>
+        <attribute name="saved" value="2025-03-25 11:56:10 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
         <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDc7IjEyOjAyOjI0ICI7MTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyICgxKS5mcHJnOzgyOTA="/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDk7IjA0OjA5OjEzICI7OTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyLmZwcmc7ODE0NA=="/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjU7IjExOjQxOjIyICI7NDU7MjI5Nw=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjU7IjExOjU2OjEwICI7NDY7MjMwMQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -57,13 +57,13 @@
             <declare name="jogador1, jogador2" type="String" array="False" size=""/>
             <declare name="continuar" type="Boolean" array="False" size=""/>
             <declare name="posicaoBotao, posicaoCobra, escolha, turno, botao, cobra, caixaEscolhida" type="Integer" array="False" size=""/>
-            <assign variable="nomes[0]" expression="&quot;Alice&quot;"/>
-            <assign variable="nomes[1]" expression="&quot;Bruno&quot;"/>
-            <assign variable="nomes[2]" expression="&quot;Carlos&quot;"/>
-            <assign variable="nomes[3]" expression="&quot;Bob&quot;"/>
-            <assign variable="nomes[4]" expression="&quot;Diana&quot;"/>
-            <assign variable="nomes[5]" expression="&quot;Eva&quot;"/>
-            <assign variable="nomes[6]" expression="&quot;Gabriel&quot;"/>
+            <assign variable="nomes[0]" expression="&quot;Anubis&quot;"/>
+            <assign variable="nomes[1]" expression="&quot;Isis&quot;"/>
+            <assign variable="nomes[2]" expression="&quot;Kemet&quot;"/>
+            <assign variable="nomes[3]" expression="&quot;Horus&quot;"/>
+            <assign variable="nomes[4]" expression="&quot;Seth&quot;"/>
+            <assign variable="nomes[5]" expression="&quot;R&#225;&quot;"/>
+            <assign variable="nomes[6]" expression="&quot;Nefertari&quot;"/>
             <output expression="&quot;A hist&#243;ria do jogo se passa dentro de uma tumba eg&#237;pcia onde dois exploradores ficaram presos. No centro da sala, h&#225; cinco caixas: uma delas cont&#233;m o bot&#227;o para abrir a porta, enquanto uma outra esconde uma cobra mortal. A cada rodada, o local do bot&#227;o e da cobra muda de caixa de forma aleat&#243;ria, aumentando o desafio e a imprevisibilidade do jogo.&quot;" newline="True"/>
             <output expression="&quot;&#9679; Cada jogador deve escolher um nome a partir de uma lista de sete op&#231;&#245;es predefinidas, e o computador sortear&#225; quem come&#231;ar&#225;;&quot;" newline="True"/>
             <output expression="&quot;&#9679; O jogador escolhido seleciona uma caixa, e o sistema informar&#225; se h&#225; uma cobra, o bot&#227;o ou se est&#225; vazia;&quot;" newline="True"/>
