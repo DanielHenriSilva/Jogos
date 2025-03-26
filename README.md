@@ -32,7 +32,6 @@ Minijogos
 Estrutura do Projeto
 - Menu Principal: Interface inicial que permite ao usuário selecionar um dos minijogos ou sair do sistema.  
 - Subprogramas: Cada minijogo é um subprograma independente, com retorno ao menu principal após o término.  
-- Repositório no GitHub: Contém o código-fonte, um arquivo README explicativo e demais artefatos do projeto.  
 
  Equipe
 - Rafael Albuquerque: Responsável pelo desenvolvimento do jogo "Perguntas e Respostas" e pela interação com o usuário no "Gousmas War".  
