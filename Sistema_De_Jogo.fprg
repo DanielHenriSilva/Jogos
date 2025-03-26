@@ -4,12 +4,12 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-25 11:56:10 "/>
+        <attribute name="saved" value="2025-03-26 08:13:55 "/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
         <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDc7IjEyOjAyOjI0ICI7MTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyICgxKS5mcHJnOzgyOTA="/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDk7IjA0OjA5OjEzICI7OTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyLmZwcmc7ODE0NA=="/>
-        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjU7IjExOjU2OjEwICI7NDY7MjMwMQ=="/>
+        <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjY7IjA4OjEzOjU1ICI7NDc7MjMxMQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -337,7 +337,7 @@
                                 </if>
                             </else>
                         </if>
-                        <if expression="gosma2 = 0">
+                        <if expression="gosma2 == 0">
                             <then>
                                 <output expression="&quot;Jogador 1 Venceu!!!&quot;" newline="True"/>
                                 <call expression="Novamente"/>
@@ -364,7 +364,7 @@
                         </if>
                         <output expression="&quot;Escolha: (1) Atacar / (2) Dividir&quot;" newline="True"/>
                         <input variable="escolha"/>
-                        <if expression="escolha = 1">
+                        <if expression="escolha == 1">
                             <then>
                                 <if expression="furia1jog1 == 0">
                                     <then>
@@ -376,7 +376,7 @@
                                                 <output expression="&quot;Atacar Gosma 1 do J1(1)&quot;" newline="True"/>
                                             </then>
                                             <else>
-                                                <output expression="&quot;Ataque Uma Das Gosmas Do Jogador 2&quot;" newline="True"/>
+                                                <output expression="&quot;Ataque Uma Das Gosmas Do Jogador 1&quot;" newline="True"/>
                                                 <output expression="&quot;Atacar Gosma 1 (1) / Atacar Gosma 2 (2)&quot;" newline="True"/>
                                             </else>
                                         </if>
@@ -517,7 +517,7 @@
                                 </if>
                             </else>
                         </if>
-                        <if expression="gosma1 = 0">
+                        <if expression="gosma1 == 0">
                             <then>
                                 <output expression="&quot;!!Jogador 2 Venceu!!&quot;" newline="True"/>
                                 <call expression="Novamente"/>
