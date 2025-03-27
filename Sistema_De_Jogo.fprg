@@ -4,12 +4,13 @@
         <attribute name="name" value="Cobra"/>
         <attribute name="authors" value="danir"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-26 08:41:20 "/>
+        <attribute name="saved" value="2025-03-26 10:23:46 PM"/>
         <attribute name="created" value="ZGFuaXI7REFOREFOOzIwMjUtMDItMjY7IjEyOjE1OjEyICI7MjEzNA=="/>
         <attribute name="edited" value="QW5kcsOpaWEgQWxidXF1ZXJxdWU7REVTS1RPUC0wTU5NTTZCOzIwMjUtMDItMjg7IjA2OjA0OjU0ICI7Mzs0Mzg1"/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDc7IjEyOjAyOjI0ICI7MTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyICgxKS5mcHJnOzgyOTA="/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMDk7IjA0OjA5OjEzICI7OTtBbmRyw6lpYSBBbGJ1cXVlcnF1ZTtERVNLVE9QLTBNTk1NNkI7MjAyNS0wMy0wMTsiMDY6Mzk6NTkgIjtnb3NtYXMgd2FyLmZwcmc7ODE0NA=="/>
         <attribute name="edited" value="ZGFuaXI7REFOREFOOzIwMjUtMDMtMjY7IjA4OjQxOjIwICI7NDk7MjMwNg=="/>
+        <attribute name="edited" value="cmFmYWVsLWFsYnVxdWVycXVlO09NTklUUklYOzIwMjUtMDMtMjY7MTA6MjM6NDYgUE07MTszODgy"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -156,6 +157,8 @@
             <output expression="&quot;&#9679; Se uma Gousma atingir um n&#237;vel de f&#250;ria maior que 5, ela se desintegra;&quot;" newline="True"/>
             <output expression="&quot;&#9679; O jogador pode optar por dividir uma Gousma, transferindo uma parte da f&#250;ria para uma nova Gousma (respeitando o limite de duas Gousmas por jogador);&quot;" newline="True"/>
             <output expression="&quot;&#9679; O jogador que perder todas as suas Gousmas ser&#225; derrotado;&quot;" newline="True"/>
+            <output expression="&quot;&#9679; N&#195;O ATAQUE A GOUSMA MORTA !!!!!!! (a n&#227;o ser que queira uma gousma fantasma contra voce :o );&quot;" newline="True"/>
+            <output expression="&quot;&#9679; A vitoria se da se e somente se houver gousmas VIVAS!;&quot;" newline="True"/>
             <output expression="&quot;----------------------------------------------------------&quot;" newline="True"/>
             <output expression="&quot;Bem Vindo ao Gosmas War!!&quot;" newline="True"/>
             <output expression="&quot;Deseja Jogar? (1 / 2)&quot;" newline="True"/>
@@ -367,6 +370,7 @@
                         </if>
                         <output expression="&quot;----------------------------------------------------------&quot;" newline="True"/>
                         <output expression="&quot;Vez Do Jogador 2&quot;" newline="True"/>
+                        <output expression="&quot;&quot;" newline="True"/>
                         <output expression="&quot;Gosma Jogador 2 = &quot; &amp;gosma2" newline="True"/>
                         <output expression="&quot;----------------------------------------------------------&quot;" newline="True"/>
                         <if expression="furia1jog2 == 0">
@@ -428,7 +432,7 @@
                                                     <else>
                                                         <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
                                                         <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
-                                                        <output expression="&quot;Atacar com Furia 1( 1) / Furia com 2 (2) ? &quot;" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia 1( 1) / Atacar com Furia 2 ( 2) ? &quot;" newline="True"/>
                                                     </else>
                                                 </if>
                                             </else>
@@ -461,7 +465,7 @@
                                                     <else>
                                                         <output expression="&quot;Furia da Gosma 1 : &quot;&amp;furia1jog2" newline="True"/>
                                                         <output expression="&quot;Furia da Gosma 2 : &quot;&amp;furia2jog2" newline="True"/>
-                                                        <output expression="&quot;Atacar com Furia 1( 1) / Furia com 2 (2) ? &quot;" newline="True"/>
+                                                        <output expression="&quot;Atacar com Furia 1( 1) / Atacar com Furia 2 ( 2) ? &quot;" newline="True"/>
                                                     </else>
                                                 </if>
                                             </else>
@@ -483,6 +487,7 @@
                             <else>
                                 <output expression="&quot;Dividir Furia da Gosma 1 p/ a Gosma 2? (1)&quot;" newline="True"/>
                                 <output expression="&quot;Dividir Furia da Gosma 2 p/ a Gosma 1? (2)&quot;" newline="True"/>
+                                <input variable="escolha"/>
                                 <if expression="furia1jog2 &lt; 5 &amp;&amp; furia2jog2 &lt; 5">
                                     <then>
                                         <output expression="&quot;Furia Gosma 1 J2: &quot; &amp;furia1jog2" newline="True"/>
